@@ -119,4 +119,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export MOZ_ENABLE_WAYLAND=1
 export PATH=$PATH:/home/mariow/.local/bin
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-export CR_TOKEN="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"
+
