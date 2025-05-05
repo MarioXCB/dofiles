@@ -128,5 +128,6 @@ return {
     brightness = 0.15,
     hue = 1.0
   },
-  font = wezterm.font 'JetBrains Mono',
+  font = wezterm.font('JetBrains Mono', {weight = "Bold"}),
+  font_size = 14
 }
