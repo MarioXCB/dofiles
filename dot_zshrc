@@ -112,7 +112,11 @@ source /home/mariow/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax
 # bun completions
 [ -s "/home/mariow/.bun/_bun" ] && source "/home/mariow/.bun/_bun"
 
-# bun
+# bunexport PATH="$PATH:$HOME/.config/composer/vendor/bin"
+
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export MOZ_ENABLE_WAYLAND=1
+export PATH=$PATH:/home/mariow/.local/bin
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export CR_TOKEN="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"

@@ -34,90 +34,77 @@ end
 
 
 return {
-pane_focus_follows_mouse = false,
+  default_cursor_style="BlinkingUnderline",
+  cursor_blink_rate = 500,
+  max_fps = 144,
+  animation_fps = 60,
+  enable_wayland = false,
+  enable_tab_bar = false,
+  pane_focus_follows_mouse = false,
   mouse_bindings = mb,
---  leader = { key = 'VoidSymbol', timeout_milliseconds = 1000 },
+  leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 },
   keys = {
---    {
---      key = 'c',
---      mods = 'CTRL|SHIFT',
---      action = wezterm.action.SpawnCommandInNewTab {
---        args = { 'zsh' },
---        cwd = '~'
---      },
---    },
+    -- TAB MANAGEMENT
     {
-      key = 't',
-      mods = 'CTRL|SHIFT',
-      action = wezterm.action.SpawnCommandInNewTab {
-        args = { 'zsh' },
-        cwd = '~'
-      },
+      mods   = "ALT",
+      key    = "t",
+      --- Create new tab
+      action = wezterm.action.SpawnTab "CurrentPaneDomain" 
     },
     {
-      key = 'f',
-      mods = 'CTRL',
-      action = wezterm.action.TogglePaneZoomState,
-    },
---    {
---      key = 'p',
---      mods = 'LEADER',
---      action = act.ActivateTabRelative(-1),
---    },
---    {
---      key = 'n',
---      mods = 'LEADER',
---      action = act.ActivateTabRelative(1),
---    },
-    {
-      key = 'LeftArrow',
-      mods = 'CTRL|SHIFT',
-      action = act.ActivateTabRelative(-1),
+      mods   = "ALT",
+      key    = "w",
+      --- Close current tab
+      action = wezterm.action.CloseCurrentTab { confirm = false }
     },
     {
-      key = 'RightArrow',
-      mods = 'CTRL|SHIFT',
-      action = act.ActivateTabRelative(1),
+      mods   = "ALT",
+      key    = "n",
+      --- Switch Tab next
+      action = wezterm.action.ActivateTabRelative(1)
     },
     {
-      key = '2',
-      mods = 'CTRL',
-      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+      mods   = "ALT",
+      key    = "b",
+      action = wezterm.action.ActivateTabRelative(-1)
     },
     {
-      key = '2',
-      mods = 'LEADER',
-      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+      mods   = "ALT",
+      key    = "v",
+      --- Split vertical
+      action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain"}
     },
     {
-      key = '5',
-      mods = 'CTRL',
-      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+      mods   = "ALT",
+      key    = "h",
+      --- Split horizontal
+      action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain"}
     },
     {
-      key = '5',
-      mods = 'LEADER',
-      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+      mods   = "ALT",
+      key    = "q",
+      --- Close current pane
+      action = wezterm.action.CloseCurrentPane {confirm = false}
     },
     {
-      key = 'LeftArrow',
-      mods = 'CTRL',
-      action = act.ActivatePaneDirection 'Left',
+      mods   = "ALT",
+      key    = "LeftArrow",
+      action = wezterm.action.ActivatePaneDirection "Left"
     },
     {
-      key = 'RightArrow',
-      mods = 'CTRL',
-      action = act.ActivatePaneDirection 'Right',
+      mods   = "ALT",
+      key    = "RightArrow",
+      action = wezterm.action.ActivatePaneDirection "Right"
     },
     {
-      key = 'UpArrow',
-      mods = 'CTRL',
-      action = act.ActivatePaneDirection 'Up',
+      mods   = "ALT",
+      key    = "UpArrow",
+      action = wezterm.action.ActivatePaneDirection "Up"
     },
     {
-      key = 'DownArrow',
-      mods = 'CTRL',
-      action = act.ActivatePaneDirection 'Down',
+      mods   = "ALT",
+      key    = "DownArrow",
+      action = wezterm.action.ActivatePaneDirection "Down"
     }
   },
   window_padding = {
