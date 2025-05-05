@@ -1,9 +1,9 @@
 format = """
-[┌──](bold fg:#03fc5e)$os\
+(bold fg:#03fc5e)$os\
 $username\
-[](bg:#DA627D fg:#9A348E)\
+[in](fg:white)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](fg:white bg:green)\
 $git_branch\
 $git_status\
 $git_state\
@@ -33,8 +33,8 @@ symbol = ' '
 style = 'bold green'
 
 [character]
-success_symbol = '[└─>](bold fg:#03fc5e)'
-error_symbol = '[└─>](bold fg:#fc034e)'
+success_symbol = '[\$](bold fg:#03fc5e)'
+error_symbol = '[\$](bold fg:#fc034e)'
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
@@ -43,8 +43,8 @@ error_symbol = '[└─>](bold fg:#fc034e)'
 # and use the os module below
 [username]
 show_always = true
-style_user = "bg:#9A348E fg:#1d1f21"
-style_root = "bg:#9A348E"
+style_user = "bg:transparent fg:green"
+style_root = "bg:green"
 format = '[$user ]($style)'
 disabled = false
 
@@ -55,7 +55,7 @@ style = "bg:#9A348E  fg:#1d1f21"
 disabled = true # Disabled by default
 
 [directory]
-style = "bg:#DA627D fg:#1d1f21"
+style = "bg:transparent fg:white"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
